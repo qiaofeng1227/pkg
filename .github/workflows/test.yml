@@ -17,13 +17,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: kentik/pkg@master
-      with:
-        name: my-package
-        version: 0.0.1
-        arch: x86_64
-        format: rpm
-        package: action.yml
+    - uses: actions/checkout@master
+    - name: Deb Build
+      uses: ebbflow-io/cargo-deb-armv7-debian@1.47.0-1
     
     - name: Print output
       run: echo ${{steps.rpm.outputs.source_rpm_path}}
