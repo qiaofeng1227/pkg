@@ -19,7 +19,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@master
     - name: Deb Build
-      uses: ebbflow-io/cargo-deb-armv7-debian@1.47.0-1
+      uses: ebbflow-io/cargo-deb-amd64-ubuntu@1.0
     
     - name: Print output
       run: echo ${{steps.rpm.outputs.source_rpm_path}}
